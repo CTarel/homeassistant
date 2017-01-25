@@ -44,7 +44,7 @@
 - platform: google_travel_time
   api_key: 
   origin: 
-  destination: 298 Avenue Napoleon Bonaparte, Rueil-Malmaison, France
+  destination: 
 #Command Line
 - platform: command_line
   command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
