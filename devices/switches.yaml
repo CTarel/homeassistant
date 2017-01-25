@@ -1,0 +1,51 @@
+- platform: rest
+  resource: http://192.168.0.111:3000/macros/Regarder%20TV
+  name: "TV ON"
+- platform: rest
+  resource: http://192.168.0.111:3000/macros/Eteindre%20TV
+  name: "TV OFF"
+- platform: rest
+  resource: http://192.168.0.111:3000/macros/Ecouter%20Musique%20NAS
+  name: "Ecouter Musique NAS"
+- platform: rest
+  resource: http://192.168.0.111:3000/macros/Arreter%20Musique%20NAS
+  name: "Arreter Musique NAS"
+- platform: rest
+  resource: http://192.168.0.111:3000/remotes/SamsungTV/KEY_PAUSE
+  name: "TV Pause"
+- platform: rest
+  resource: http://192.168.0.111:3000/remotes/SamsungTV/KEY_PLAY
+  name: "TV Play"
+- platform: rest
+  resource: http://192.168.0.111:3000/remotes/Harman-Kardon_HK3490/KEY_MUTE
+  name: "Mute Amp"
+- platform: command_line
+  switches:
+    tv_on_off:
+      command_on: "/usr/bin/curl -X POST http://192.168.0.111:3000/macros/Regarder%20TV"
+      command_off: "/usr/bin/curl -X POST http://192.168.0.111:3000/macros/Eteindre%20TV"
+      command_state: sleep 5 && ping -q -W 1 -c 1 192.168.0.106
+    musique_on_off:
+      command_on: "/usr/bin/curl -X POST http://192.168.0.111:3000/macros/Ecouter%20Musique%20NAS"
+      command_off: "/usr/bin/curl -X POST http://192.168.0.111:3000/macros/Arreter%20Musique%20NAS"
+      command_state: sleep 5 && ping -q -W 1 -c 1 192.168.0.102
+- platform: template
+  switches:
+    ecouter_musique:
+      value_template: "{% if is_state('switch.musique_on_off', 'on') and is_state('switch.tv_on_off', 'off') %}on{% else %}off{% endif %}"
+      turn_on:
+        service: switch.turn_on
+        entity_id: switch.musique_on_off
+      turn_off:
+        service: switch.turn_off
+        entity_id: switch.musique_on_off
+#    regarder_tv:
+#      value_template: "{% if is_state('device_tracker.1921680106', 'home') %}on{% else %}off{% endif %}"
+#      turn_on:
+#        service: switch.turn_on
+#        entity_id: switch.tv_on
+#      turn_off:
+#        service: switch.turn_on
+#        entity_id: switch.tv_off
+
+
