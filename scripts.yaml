@@ -1,0 +1,9 @@
+##### HASS
+restart_ha: !include scripts/restart_ha.yaml
+update_ha: !include scripts/update_HA.yaml
+##### Notif
+notify_update: !include scripts/notify_update.yaml
+##### Media
+morning_playlist: !include scripts/morning_playlist.yaml
+play_music: !include scripts/play_music.yaml
+stop_music: !include scripts/stop_music.yaml
