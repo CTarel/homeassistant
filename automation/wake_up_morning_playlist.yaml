@@ -1,0 +1,32 @@
+alias: Alarm Clock Slider
+trigger:
+  platform: template
+  value_template: '{{ now().strftime("%H") == states.input_slider.slider_hours.state and now.strftime("%M") == states.input_slider.slider_minutes.state }}'
+condition:
+      condition: or
+      conditions:
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: input_boolean.alarm_clock
+              state: 'on'
+            - condition: state
+              entity_id: input_boolean.alarmweekday
+              state: 'on'
+            - condition: time
+              weekday:
+                - mon
+                - tue
+                - wed
+                - thu
+                - fri
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: input_boolean.alarm_clock
+              state: 'on'
+            - condition: state
+              entity_id: input_boolean.alarmweekday
+              state: 'off'
+action:
+  service: script.morning_playlist
