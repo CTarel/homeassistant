@@ -1,0 +1,7 @@
+ restart_ha: 'sudo systemctl restart home-assistant.service'
+ update_ha: 'cd ~/fabric-home-assistant && fab upgrade_homeassistant && sudo systemctl restart home-assistant.service'
+ morning_playlist: 'sudo /home/homeassistant/.homeassistant/HA/syno/morning_playlist.sh "Morning Playlist"'
+ play_music: 'sudo python3 /home/homeassistant/.homeassistant/HA/syno/playlist.py "{{ states.input_select.syno_playlists.state }}" "{{ states.input_select.syno_players.state }}"'
+ stop_music: 'sudo python3 /home/homeassistant/.homeassistant/HA/syno/stop_playlist.py "{{ states.input_select.syno_players.state }}"'
+
+
