@@ -1,0 +1,12 @@
+alarm_clock:
+  name: Reveil
+  initial: off
+  icon: mdi:alarm-check
+alarmweekday:
+  name: Semaine uniquement
+  initial: off
+  icon: mdi:calendar
+music_syno:
+  name: Musique
+  initial: off
+  icon: mdi:play
