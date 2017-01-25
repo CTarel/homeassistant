@@ -1,0 +1,118 @@
+ default_view:
+   view: yes
+   entities:
+   - group.bathroom
+   - device_tracker.006d5202c770
+   - device_tracker.c0eefb4392b5
+   - weblink.home_assistant
+   - group.reveil
+   - group.lights
+   - group.trajets
+
+ living_room:
+   name: salon
+   view: yes
+   entities:
+   - group.living_room_media
+   - group.living_room_links
+   - light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_2_0
+   - device_tracker.1921680102
+   - device_tracker.1921680106
+
+ entrance:
+   name: entree
+   view: yes
+   entities:
+   - group.porte
+
+ environment:
+   name: environment
+   view: yes
+   entities:
+   - group.weather
+   - group.worldclock
+
+ media:
+   name: media
+   view: yes
+   entities:
+   - group.syno_playlist
+   - group.living_room_media
+   - group.series
+
+ ha_status:
+   name: status
+   view: yes
+   entities:
+   - group.home_assistant_status
+   - group.speedtest
+   - weblink.home_assistant
+
+ ####GROUPS####
+ Reveil:
+    - sensor.alarm_time
+    - input_slider.slider_hours
+    - input_slider.slider_minutes
+    - input_boolean.alarm_clock
+    - input_boolean.alarmweekday
+
+ Home Assistant Status:
+    - script.restart_ha
+    - script.update_ha
+    - sensor.ha_release
+    - sensor.cpu_use
+    - sensor.since_last_boot
+
+ Speedtest:
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+
+ Living Room Media:
+    - scene.movie_time
+    - switch.tv_on_off
+    - switch.ecouter_musique
+
+ Living Room Links:
+    - weblink.universal_remote
+    - weblink.dsm
+    - weblink.couchpotato
+    - weblink.sonarr
+
+ Lights:
+    - light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_2_0
+    - light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_4_0
+
+ Syno Playlist:
+    - input_select.syno_playlists
+    - input_select.syno_players
+    - input_boolean.music_syno
+    - script.morning_playlist
+
+ Series:
+    - sensor.sonarr_upcoming
+
+ Weather:
+    - sensor.date__time
+    - sensor.yr_symbol
+    - sun.sun
+    - sensor.yr_temperature
+    - sensor.yr_cloudiness
+    - sensor.yr_precipitation
+    - sensor.yr_wind_speed
+    - sensor.yr_humidity
+    - sensor.yr_fog
+
+ Trajets:
+    - sensor.google_travel_time__driving
+    - sensor.google_travel_time__driving_2
+    - sensor.google_travel_time__driving_3
+
+ Worldclock:
+    - sensor.time
+    - sensor.sao_paulo
+    - sensor.mexico
+
+ Porte:
+    - sensor.entrance_door
+    - binary_sensor.door
