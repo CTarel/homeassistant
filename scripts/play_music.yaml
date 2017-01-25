@@ -1,0 +1,15 @@
+sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "Playing Music"
+#- service: notify.notify
+#  data:
+#    message: "Playing {{ states.input_select.syno_playlists.state }} at {{ states('sensor.date__time') }}"
+- service: switch.turn_on
+  data:
+    entity_id: switch.ecouter_musique_nas
+- delay:
+  # supports seconds, minutes, hours, days
+    seconds: 15
+- service: templated_shell_command.play_music
