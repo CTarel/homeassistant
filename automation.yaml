@@ -1,0 +1,5 @@
+- !include automation/wake_up_morning_playlist.yaml
+- !include automation/update_available.yaml
+- !include automation/playlist_syno.yaml
+- !include automation/stop_playlist_syno.yaml
+- !include automation/dim_lights_movie_night.yaml
