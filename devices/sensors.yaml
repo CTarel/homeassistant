@@ -1,0 +1,66 @@
+#Forecast
+- platform: yr
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - humidity
+    - fog
+    - cloudiness
+#Time & Date
+- platform: time_date
+  display_options:
+    - 'date_time'
+    - 'time'
+- platform: worldclock
+  time_zone: America/Mexico_City
+  name: Mexico
+- platform: worldclock
+  time_zone: America/Sao_Paulo
+  name: Sao Paulo
+#System
+- platform: systemmonitor
+  resources:
+    - type: processor_use
+    - type: since_last_boot
+#Speedtest
+- platform: speedtest
+  minute: 30
+  hour: 0
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+#Travel Time
+- platform: google_travel_time
+  api_key: 
+  origin: 
+  destination: 
+- platform: google_travel_time
+  api_key: 
+  origin: 
+  destination: 
+- platform: google_travel_time
+  api_key: 
+  origin: 
+  destination: 298 Avenue Napoleon Bonaparte, Rueil-Malmaison, France
+#Command Line
+- platform: command_line
+  command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
+  name: HA release
+#Time
+- platform: template
+  sensors:
+    alarm_time:
+      value_template: '{{ "%0.02d:%0.02d" | format(states("input_slider.slider_hours") | int, states("input_slider.slider_minutes") | int) }}'
+    time_paris:
+      value_template: '{{ now().strftime("%-H") }}:{{ now().strftime("%-M") }}'
+#Sonarr
+- platform: sonarr
+  api_key: 905993e661ec4c9b85bf3dd3a1136d64
+  host: 192.168.0.122
+  port: 8989
+  monitored_conditions:
+    - upcoming
+  days: 5
