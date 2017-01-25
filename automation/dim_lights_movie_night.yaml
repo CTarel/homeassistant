@@ -2,7 +2,7 @@
 alias: Dim Lights Movie Night
 trigger:
   platform: state
-  entity_id: switch.regarder_tv
+  entity_id: switch.tv_on_off
   state: 'on'
 condition:
   condition: state
