@@ -1,8 +1,8 @@
 - name: Movie Time
   entities:
-      light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_2:
+      light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_2_0:
           state: on
           transition: 2
           brightness: 125
-      switch.regarder_tv:
+      switch.tv_on_off:
           state: on
