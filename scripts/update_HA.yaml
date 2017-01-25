@@ -1,0 +1,9 @@
+sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "Updating Home Assistant"
+- service: notify.notify
+  data:
+    message: "Updating Home Assistant at {{ states('sensor.date__time') }}"
+- service: shell_command.update_ha
