@@ -1,0 +1,119 @@
+#######CUSTOMIZE SWITCHES########
+####MEDIA####
+     switch.tv_on:
+        friendly_name: "Regarder TV"
+        icon: mdi:filmstrip
+     switch.tv_off:
+        friendly_name: "Eteindre TV"
+        icon: mdi:filmstrip-off
+     switch.ecouter_musique_nas:
+        friendly_name: "Ecouter Musique NAS"
+        icon: mdi:music-box
+     switch.arreter_musique_nas:
+        friendly_name: "Arreter Musique NAS"
+        icon: mdi:music-box-outline
+     switch.tv_pause:
+        friendly_name: "TV Pause"
+        icon: mdi:pause
+     switch.tv_play:
+        friendly_name: "TV Play"
+        icon: mdi:play
+     switch.mute_amp:
+        friendly_name: "Mute Amp"
+        icon: mdi:volume-on
+     switch.tv_on_off:
+        friendly_name: "Regarder TV"
+        icon: mdi:filmstrip
+     switch.ecouter_musique:
+        friendly_name: "Ecouter Musique"
+        icon: mdi:music-box
+     scene.movie_time:
+        friendly_name: "Movie Time"
+        entity_picture: http://images.freeimages.com/images/previews/a84/pop-corn-1324646.jpg
+
+####LIGHTS####
+     light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_2_0:
+        friendly_name: "Lumiere Salon"
+        icon: mdi:lightbulb
+     light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_4_0:
+        friendly_name: "Lumiere Chambre"
+        icon: mdi:lightbulb
+
+########CUSTOMIZE SENSORS########
+####PORTE####
+     sensor.entrance_door:
+        friendly_name: "Porte entree"
+####WEATHER####
+     sensor.yr_cloudiness:
+        friendly_name: "Couverture Nuageuse"
+        icon: mdi:cloud
+     sensor.yr_humidity:
+        friendly_name: "Humidite"
+        icon: mdi:water
+     sensor.yr_temperature:
+        icon: mdi:thermometer
+        friendly_name: "Temperature"
+     sensor.yr_wind_speed:
+        icon: mdi:weather-windy
+        friendly_name: "Vitesse Du Vent"
+     sensor.yr_symbol:
+        friendly_name: "Condition"
+     sensor.yr_precipitation:
+        friendly_name: "Precipitations"
+     sensor.yr_fog:
+        icon: mdi:weather-fog
+        friendly_name: "Brouillard"
+
+####GOOGLE TRAVEL TIME####
+     sensor.google_travel_time__driving_2:
+        icon: mdi:soccer
+        friendly_name: "Foot"
+     sensor.google_travel_time__driving_3:
+        friendly_name: "Travail"
+        icon: mdi:briefcase
+     sensor.google_travel_time__driving:
+        friendly_name: "Parents"
+        icon: mdi:human-male-female
+
+####MISC####
+     sensor.cpu_use:
+        icon: mdi:speedometer
+     sensor.since_last_boot:
+        icon: mdi:clock-start
+     sensor.speedtest_ping:
+        icon: mdi:clock
+        friendly_name: "Ping"
+     sensor.speedtest_download:
+        icon: mdi:arrow-down
+        friendly_name: "Download"
+     sensor.speedtest_upload:
+        icon: mdi:arrow-up
+        friendly_name: "Upload"
+     sensor.ha_release:
+        icon: mdi:information
+
+
+####TIME####
+     sensor.date__time:
+        icon: mdi:calendar-clock
+     sensor.alarm_time:
+        icon: mdi:alarm
+        friendly_name: "Time"
+     sensor.time:
+        entity_picture: https://youtube.com/yt/space/media/images/yt-space-icon-paris.png
+        friendly_name: "Paris"
+     sensor.sao_paulo:
+        entity_picture: https://youtube.com/yt/space/media/images/yt-space-icon-saopaulo.png
+     sensor.mexico:
+        entity_picture: https://image.freepik.com/free-icon/angel-of-independence-of-mexico_318-42405.jpg
+
+########CUSTOMIZE SCRIPTS########
+     script.restart_ha:
+        icon: mdi:power
+        friendly_name: "Restart Home Assistant"
+     script.update_ha:
+        icon: mdi:replay
+        friendly_name: "Update Home Assistant"
+     script.morning_playlist:
+        entity_picture: https://s-media-cache-ak0.pinimg.com/564x/91/57/f1/9157f1886f53dfa5974b3db0abd5f104.jpg
+        friendly_name: "Morning Playlist"
