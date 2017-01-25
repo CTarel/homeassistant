@@ -1,0 +1,16 @@
+syno_playlists:
+  name: DS Audio Playlists
+  options:
+   - 20 sept
+   - Anniv 2014
+   - Morning
+   - Spring 2014
+  icon: mdi:playlist-check
+syno_players:
+  name: DS Audio Players
+  options:
+   - "N-50 (AirPlay) "
+   - Bathroom
+   - Multiple AirPlay Devices
+  icon: mdi:airplay
+
