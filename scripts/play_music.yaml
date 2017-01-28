@@ -12,4 +12,4 @@ sequence:
 - delay:
   # supports seconds, minutes, hours, days
     seconds: 15
-- service: templated_shell_command.play_music
+- service: shell_command.play_music
