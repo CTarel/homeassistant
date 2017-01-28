@@ -41,7 +41,7 @@
 
 ########CUSTOMIZE SENSORS########
 ####PORTE####
-     sensor.entrance_door:
+     binary_sensor.entrance_door:
         friendly_name: "Porte entree"
 ####WEATHER####
      sensor.yr_cloudiness:
