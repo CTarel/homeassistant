@@ -68,10 +68,10 @@
      sensor.google_travel_time__driving_2:
         icon: mdi:soccer
         friendly_name: "Foot"
-     sensor.google_travel_time__driving_3:
+     sensor.google_travel_time__driving:
         friendly_name: "Travail"
         icon: mdi:briefcase
-     sensor.google_travel_time__driving:
+     sensor.google_travel_time__driving_3:
         friendly_name: "Parents"
         icon: mdi:human-male-female
 
