@@ -114,5 +114,4 @@
     - sensor.mexico
 
  Porte:
-    - sensor.entrance_door
-    - binary_sensor.door
+    - binary_sensor.entrance_door
