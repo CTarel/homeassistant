@@ -111,6 +111,7 @@
  Worldclock:
     - sensor.time
     - sensor.sao_paulo
+    - sensor.buenos_aires
     - sensor.mexico
 
  Porte:
