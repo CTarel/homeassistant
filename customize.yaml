@@ -106,6 +106,8 @@
         entity_picture: https://youtube.com/yt/space/media/images/yt-space-icon-saopaulo.png
      sensor.mexico:
         entity_picture: https://image.freepik.com/free-icon/angel-of-independence-of-mexico_318-42405.jpg
+     sensor.buenos_aires:
+        entity_picture: http://t0.gstatic.com/images?q=tbn:ANd9GcS0oEHIptMxmQBB9jjtMqFNKPHxFtUAAA00GgxrJ7Y9Dt5ZCgfoKYEGljw
 
 ########CUSTOMIZE SCRIPTS########
      script.restart_ha:
