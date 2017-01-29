@@ -17,6 +17,9 @@
   time_zone: America/Mexico_City
   name: Mexico
 - platform: worldclock
+  time_zone: America/Argentina/Buenos_Aires
+  name: Buenos Aires
+- platform: worldclock
   time_zone: America/Sao_Paulo
   name: Sao Paulo
 #System
