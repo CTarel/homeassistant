@@ -29,4 +29,4 @@ condition:
               entity_id: input_boolean.alarmweekday
               state: 'off'
 action:
-  service: script.morning_playlist
+  - service: script.morning_playlist
