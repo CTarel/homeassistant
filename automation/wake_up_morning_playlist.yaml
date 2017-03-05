@@ -1,7 +1,7 @@
 alias: Wake Up Morning Playlist
 trigger:
-  - platform: template
-    value_template: '{{ now().time().strftime("%R") == states.sensor.alarm_time.state }}'
+  platform: template
+  value_template: '{{ now().time().strftime("%R") == states.sensor.alarm_time.state }}'
 condition:
   condition: or
   conditions:
