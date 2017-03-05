@@ -1,4 +1,4 @@
-alias: Alarm Clock Slider
+alias: Wake Up Morning Playlist
 trigger:
   - platform: template
     value_template: '{{ now().time().strftime("%R") == states.sensor.alarm_time.state }}'
