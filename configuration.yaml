@@ -7,8 +7,6 @@ homeassistant:
   customize: !include customize.yaml
   unit_system: metric
 
-base_url: 192.168.0.111:8123
-
 http:
   api_password: xxx
 
