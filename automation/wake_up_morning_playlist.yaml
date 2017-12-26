@@ -1,34 +1,34 @@
-alias: Wake Up Morning Playlist
-trigger:
-  platform: template
-  value_template: '{{ ((now().strftime("%-H") | int) == (states.input_slider.slider_hours.state | int)) and ((now().strftime("%-M") | int) == (states.input_slider.slider_minutes.state | int)) }}'
-condition:
-  condition: or
-  conditions:
-    - condition: and
-      conditions:
-        - condition: state
-          entity_id: input_boolean.alarm_clock
-          state: 'on'
-        - condition: state
-          entity_id: input_boolean.alarmweekday
-          state: 'on'
-        - condition: time
-          weekday:
-            - mon
-            - tue
-            - wed
-            - thu
-            - fri
-    - condition: and
-      conditions:
-        - condition: state
-          entity_id: input_boolean.alarm_clock
-          state: 'on'
-        - condition: state
-          entity_id: input_boolean.alarmweekday
-          state: 'off'
-action:
-  service: switch.turn_on
-  entity_id: switch.ecouter_musique_nas
-#  - service: script.morning_playlist
+- alias: "Wake Up Morning Playlist"
+  trigger:
+    - platform: template
+      value_template: '{{ ((now().strftime("%-H") | int) == (states.input_slider.slider_hours.state | int)) and ((now().strftime("%-M") | int) == (states.input_slider.slider_minutes.state | int)) }}'
+  condition:
+    condition: or
+    conditions:
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.alarm_clock
+            state: 'on'
+          - condition: state
+            entity_id: input_boolean.alarmweekday
+            state: 'on'
+          - condition: time
+            weekday:
+              - mon
+              - tue
+              - wed
+              - thu
+              - fri
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.alarm_clock
+            state: 'on'
+          - condition: state
+            entity_id: input_boolean.alarmweekday
+            state: 'off'
+  action:
+    service: switch.turn_on
+    entity_id: switch.ecouter_musique_nas
+  #  - service: script.morning_playlist
