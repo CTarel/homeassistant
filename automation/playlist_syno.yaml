@@ -1,7 +1,8 @@
-alias: Playlist Syno
-trigger:
-  platform: state
-  entity_id: input_boolean.music_syno
-  state: 'on'
-action:
-  service: script.play_music
+- alias: "Playlist Syno"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.music_syno
+      to: 'on'
+      from: 'off'
+  action:
+    service: script.play_music
