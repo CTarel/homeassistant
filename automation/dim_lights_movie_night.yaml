@@ -1,17 +1,19 @@
 
-alias: Dim Lights Movie Night
-trigger:
-  platform: state
-  entity_id: switch.tv_on_off
-  state: 'on'
-condition:
-  condition: state
-  entity_id: sun.sun
-  state: 'below_horizon'
-action:
-  service: light.turn_on
-  entity_id: light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_2_0
-  data:
-    brightness: 125
-    transition: 2
+- alias: "Dim Lights Movie Night"
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: switch.tv_on_off
+      to: 'on'
+      from: 'off'
+  condition:
+    - condition: state
+      entity_id: sun.sun
+      state: 'below_horizon'
+  action:
+    service: light.turn_on
+    entity_id: light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_2_0
+    data:
+      brightness: 125
+      transition: 2
 
