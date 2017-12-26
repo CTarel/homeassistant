@@ -1,7 +1,8 @@
-alias: Stop Playlist Syno
-trigger:
-  platform: state
-  entity_id: input_boolean.music_syno
-  state: 'off'
-action:
-  service: script.stop_music
+- alias: Stop Playlist Syno
+  trigger:
+    - platform: state
+      entity_id: input_boolean.music_syno
+      to: 'off'
+      from: 'on'
+  action:
+    service: script.stop_music
