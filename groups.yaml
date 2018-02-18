@@ -51,8 +51,7 @@
  ####GROUPS####
  Reveil:
     - sensor.alarm_time
-    - input_slider.slider_hours
-    - input_slider.slider_minutes
+    - input_datetime.reveil
     - input_boolean.alarm_clock
     - input_boolean.alarmweekday
 
