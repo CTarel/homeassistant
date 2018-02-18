@@ -1,7 +1,7 @@
 - alias: "Wake Up Morning Playlist"
   trigger:
     - platform: template
-      value_template: '{{ ((now().strftime("%-H") | int) == (states.input_slider.slider_hours.state | int)) and ((now().strftime("%-M") | int) == (states.input_slider.slider_minutes.state | int)) }}'
+      value_template: '{{ ((now().strftime("%-H") | int) == (states.input_number.slider_hours.state | int)) and ((now().strftime("%-M") | int) == (states.input_number.slider_minutes.state | int)) }}'
   condition:
     condition: or
     conditions:
