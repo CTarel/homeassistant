@@ -29,7 +29,7 @@ switch: !include devices/switches.yaml
 automation: !include automation.yaml
 group: !include groups.yaml
 input_boolean: !include input_boolean.yaml
-input_datetime: !include input_datetime.yaml
+input_number: !include input_number.yaml
 input_select: !include input_select.yaml
 notify: !include notify.yaml
 scene: !include scenes.yaml
