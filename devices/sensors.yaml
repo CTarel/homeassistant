@@ -56,7 +56,7 @@
 - platform: template
   sensors:
     alarm_time:
-      value_template: '{{ "%0.02d:%0.02d" | format(states("input_slider.slider_hours") | int, states("input_slider.slider_minutes") | int) }}'
+      value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.slider_hours") | int, states("input_number.slider_minutes") | int) }}'
     time_paris:
       value_template: '{{ now().strftime("%-H") }}:{{ now().strftime("%-M") }}'
 #Sonarr
