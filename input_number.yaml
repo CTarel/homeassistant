@@ -1,0 +1,12 @@
+slider_hours:
+  name: Heure
+  initial: 07
+  min: 00
+  max: 23
+  step: 1
+slider_minutes: 
+  name: Minutes
+  initial: 00
+  min: 00
+  max: 55
+  step: 5
