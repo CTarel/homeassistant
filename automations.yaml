@@ -1,7 +1,7 @@
 ## Dim Lights Movie Night
 - action:
   - service: light.turn_on
-    entity_id: light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_2_0
+    entity_id: light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level
     data:
       brightness: 125
       transition: 2
@@ -62,5 +62,3 @@
     from: 'on'
     platform: state
     to: 'off'
-
-
