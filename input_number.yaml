@@ -1,12 +1,14 @@
-slider_hours:
-  name: Heure
-  initial: 07
-  min: 00
+alarmhour:
+  name: Hour
+  icon: mdi:timer
+  initial: 7
+  min: 0
   max: 23
   step: 1
-slider_minutes: 
+alarmminutes:
   name: Minutes
-  initial: 00
-  min: 00
-  max: 55
+  icon: mdi:timer
+  initial: 30
+  min: 0
+  max: 59
   step: 5
