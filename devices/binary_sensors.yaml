@@ -1,5 +1,5 @@
 - platform: template
   sensors:
     entrance_door:
-      value_template: "{{ states.sensor.vision_zd2102_eu_doorwindow_sensor_access_control_3_9.state == '22' }}"
-      sensor_class: opening
+      value_template: "{{ states.binary_sensor.sensor.vision_zd2102_eu_doorwindow_sensor_access_control.state == '22' }}"
+      device_class: opening
