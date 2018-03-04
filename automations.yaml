@@ -1,5 +1,66 @@
-- !include automation/wake_up_morning_playlist.yaml
-- !include automation/update_available.yaml
-- !include automation/playlist_syno.yaml
-- !include automation/stop_playlist_syno.yaml
-- !include automation/dim_lights_movie_night.yaml
+## Dim Lights Movie Night
+- action:
+  - service: light.turn_on
+    entity_id: light.zwaveme_zme_0643305433_wall_flushmountable_dimmer_level_2_0
+    data:
+      brightness: 125
+      transition: 2
+  alias: Dim Lights Movie Night
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  id: '1518964285138'
+  trigger:
+  - entity_id: switch.tv_on_off
+    from: 'off'
+    platform: state
+    to: 'on'
+
+## Wake Up Morning Playlist
+- action:
+  - service: notify.notify
+  - service: switch.turn_on
+    entity_id: switch.ecouter_musique_nas
+  - delay: '00:00:15'
+  - service: media_player.media_play
+    entity_id: media_player.n07babc
+  alias: Wake Up Morning Playlist
+  condition:
+  - condition: or
+    conditions:
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.alarmweekday
+            state: 'on'
+          - condition: time
+            weekday:
+            - mon
+            - tue
+            - wed
+            - thu
+            - fri
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.alarmweekday
+            state: 'off'
+  id: '1518964864113'
+  trigger:
+  - platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.alarm_time.state }}'
+
+## Stop Playlist Syno
+- action:
+  - service: script.stop_music
+  alias: Stop Playlist Syno
+  condition: []
+  id: '1518965998183'
+  trigger:
+  - entity_id: input_boolean.music_syno
+    from: 'on'
+    platform: state
+    to: 'off'
+
+
