@@ -11,8 +11,11 @@
 #Time & Date
 - platform: time_date
   display_options:
-    - 'date_time'
     - 'time'
+    - 'date'
+    - 'date_time'
+    - 'time_date'
+    - 'time_utc'
 - platform: worldclock
   time_zone: America/Mexico_City
   name: Mexico
@@ -27,6 +30,7 @@
   resources:
     - type: processor_use
     - type: since_last_boot
+- platform: version
 #Speedtest
 - platform: speedtest
   minute: 30
@@ -37,26 +41,26 @@
     - upload
 #Travel Time
 - platform: google_travel_time
-  api_key: 
-  origin: 
-  destination: 
+  api_key: AIzaSyBAbs84jl4Ac1cxgfKovwKlQ7Ai7rvRy4k
+  origin: 16 Rue Salomon de Rothschild, Suresnes, France
+  destination: 250 Route de l'Empereur, Rueil-Malmaison, France
 - platform: google_travel_time
-  api_key: 
-  origin: 
-  destination: 
+  api_key: AIzaSyBAbs84jl4Ac1cxgfKovwKlQ7Ai7rvRy4k
+  origin: 16 Rue Salomon de Rothschild, Suresnes, France
+  destination: 9 rue Xavier de Maistre, Rueil-Malmaison, France
 - platform: google_travel_time
-  api_key: 
-  origin: 
-  destination: 
+  api_key: AIzaSyBAbs84jl4Ac1cxgfKovwKlQ7Ai7rvRy4k
+  origin: 16 Rue Salomon de Rothschild, Suresnes, France
+  destination: 298 Avenue Napoleon Bonaparte, Rueil-Malmaison, France
 #Command Line
 - platform: command_line
   command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
-  name: HA release
+  name: Latest HA release
 #Time
 - platform: template
   sensors:
     alarm_time:
-      value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.slider_hours") | int, states("input_number.slider_minutes") | int) }}'
+      value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhour") | int, states("input_number.alarmminutes") | int) }}'
     time_paris:
       value_template: '{{ now().strftime("%-H") }}:{{ now().strftime("%-M") }}'
 #Sonarr
@@ -67,3 +71,4 @@
   monitored_conditions:
     - upcoming
   days: 5
+
