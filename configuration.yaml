@@ -8,7 +8,7 @@ homeassistant:
   unit_system: metric
 
 http:
-  api_password: Losc123@
+  api_password: ###
 
 zwave:
   usb_path: /dev/ttyACM0
